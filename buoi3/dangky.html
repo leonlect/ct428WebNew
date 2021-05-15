@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buổi 3 - Bài 1 Đăng ký</title>
+    <style>
+      table{
+        /* border: 1px solid red; */
+        margin: 10px 5px 10px 10px;
+        background-color: #d3d3d3;
+        border-collapse: collapse;
+      }
+
+      form {
+       margin-left: auto;
+       margin-right: auto;
+       width: 412px;
+       /* padding: 1px 1px 1px 1px; */
+       border: 1px solid black;
+      }
+      td {
+        /* border: 1px solid purple; */
+        padding: 15px 1px 15px 18px;
+      }
+
+      .td2 {
+        padding-left: 15px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <form action="xuly_dangky.php"
+          method="POST" border="1"
+          enctype="multipart/form-data">
+      <table>
+        <tr>
+          <td>Tên đăng nhập</td>
+          <td class="td2">
+            <input type="text" name="userName" size="15" />
+          </td>
+        </tr>
+        <tr>
+          <td>Mật khẩu</td>
+          <td class="td2">
+            <input type="password" name="passWord" size="15" />
+          </td>
+        </tr>
+        <tr>
+          <td>Gõ lại mật khẩu</td>
+          <td class="td2">
+            <input type="password" name="confirm" size="15" />
+          </td>
+        </tr>
+        <tr>
+          <td>Hình đại diện</td>
+          <td class="td2">
+            <input type="file" name="avatar"/>
+          </td>
+        </tr>
+        <tr>
+          <td>Giới tính</td>
+          <td class="td2">
+            <input type="radio" id="male" name="gender" value="Nam" />
+            <label for="male">Nam</label>
+            <input type="radio" id="female" name="gender" value="Nữ" />
+            <label for="female">Nữ</label>
+            <input type="radio" id="other" name="gender" value="Khác" />
+            <label for="other">Khác</label>
+          </td>
+        </tr>
+        <tr>
+          <td>Nghề nghiệp</td>
+          <td class="td2">
+            <!-- Drop down list -->
+            <select name="nghenghiep">
+              <option value="Học sinh">Học sinh</option>
+              <option value="Sinh viên">Sinh viên</option>
+              <option value="Giáo viên">Giáo viên</option>
+              <option value="Khác">Khác</option>
+          </td>
+        </tr>
+        <tr>
+         <td>Sở thích</td>
+         <td class="td2">
+          <input type="checkbox" name="sothich[]" value="Thể thao">Thể thao
+          <input type="checkbox" name="sothich[]" value="Du lịch">Du lịch
+          <input type="checkbox" name="sothich[]" value="Âm nhạc">Âm nhạc</br>
+          <input type="checkbox" name="sothich[]" value="Thời trang">Thời trang
+         </td>
+       </tr>
+       <tr>
+        <td></td>
+        <td class="td2">
+          <input type="submit" value="Đăng ký">
+          <input type="reset" value="Nhập lại">
+        </td>
+      </tr>
+      </table>
+    </form>
+  </body>
+</html>
