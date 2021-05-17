@@ -1,8 +1,8 @@
 <?php
  session_start(); //Khởi tạo session
- echo "Your ID is: ".$_SESSION['id'];
+//  echo "Your ID is: ".$_SESSION['id'];
 
- if (!empty($_SESSION['id']) ) {
+ if (isset($_SESSION['id']) ) { //Kiểm tra nếu đã khởi tạo SESSION trước đó.
     //Gán lại id từ SESSION để dùng cho truy vấn
     $id = $_SESSION['id'];
 
@@ -21,11 +21,11 @@
       $sothich = $row['sothich'];
       $avatar = $row['hinhanh'];
     }
-}
-else {
-  header ("Location: dangnhap.php");
-}
- ?>
+  }
+  else {
+    header ("Location: dangnhap.html");
+  }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,6 +33,7 @@ else {
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Buổi 3 - Thông tin cá nhân</title>
     <style>
       table {
@@ -69,10 +70,6 @@ else {
         float: left;
       }
 
-      .border {
-        /* border: 1px solid black; */
-      }
-
       .btnPostion {
         position: relative;
         left: 100px;
@@ -97,8 +94,8 @@ else {
         </td>
       </tr>
       <tr>
-        <td class="left border btnPostion">
-          <input type="button" value="Đăng xuất" />
+        <td class="left btnPostion">
+          <a href='dangxuat.php'><input type="button" value="Đăng xuất" /></a>
         </td>
       </tr>
     </table>
