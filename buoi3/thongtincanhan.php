@@ -70,11 +70,18 @@
         float: left;
       }
 
-      .btnPostion {
+      .btnSP {
         position: relative;
-        left: 100px;
+        left: 10px;
         bottom: 30px;
       }
+
+      .btnLogout {
+        position: relative;
+        left: 90px;
+        bottom: 30px;
+      }
+
     </style>
   </head>
   <body>
@@ -83,7 +90,7 @@
         <td colspan="2" class="center textRed borderBottom">Chào bạn: <?php echo $tendangnhap; ?>!</td>
       </tr>
       <tr>
-        <td class="imgSize" rowspan="2">
+        <td class="imgSize" rowspan="3">
           <img src="<?php echo $avatar; ?>" width="200px" height="200px" />
         </td>
         <td class="left border">
@@ -94,10 +101,16 @@
         </td>
       </tr>
       <tr>
-        <td class="left btnPostion">
-          <a href='dangxuat.php'><input type="button" value="Đăng xuất" /></a>
+        <td class="btnSP">
+          <a href='themsanpham.html'><input type="button" value="Thêm sản phẩm" /></a>
+          <a href='#'><input type="button" value="Danh sách sản phẩm" /></a>
         </td>
       </tr>
+    <tr>
+        <td class='btnLogout'>
+          <a href='dangxuat.php'><input type="button" value="Đăng xuất" /></a>
+        </td>
+    </tr>
     </table>
   </body>
 </html>
