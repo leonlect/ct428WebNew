@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION['id'])) {
+  header ('Location: dangnhap.html');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>

@@ -24,7 +24,7 @@ if(isset($_SESSION['id'])) //Nếu tồn tại SESSION thì xử lý ko thì ph�
  $con->query($sql);
  $con->close();
  // echo "<h2 style='text-align: center'>Thêm sản phẩm mới thành công !</h2>";
- header ('Location: danhsachsp.php');
+ header ('Location: danhsachsanpham.php');
 }
 else {
  header ('Location: dangnhap.html');

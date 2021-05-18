@@ -12,7 +12,7 @@
  require 'connect.php'; //nạp sẵn file tạo kết nối với db
 
  //Bước 2 tạo câu truy vấn lấy ra id của người dùng với tên đăng nhập và mk có trong CSDL
-$sql = " SELECT id FROM thanhvien
+$sql = " SELECT id, tendangnhap FROM thanhvien
          WHERE tendangnhap = '".$tendangnhap."'
          AND matkhau = '".$matkhau."' ";
 // echo $sql;

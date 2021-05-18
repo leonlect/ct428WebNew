@@ -16,6 +16,7 @@
     if($result->num_rows > 0) {
       $row = $result->fetch_assoc();
       $tendangnhap = $row['tendangnhap'];
+      $_SESSION['tendangnhap'] = $tendangnhap; //Lấy ra biến tên đăng nhập lưu vào SESSION
       $gioitinh = $row['gioitinh'];
       $nghenghiep = $row['nghenghiep'];
       $sothich = $row['sothich'];
@@ -102,7 +103,7 @@
       </tr>
       <tr>
         <td class="btnSP">
-          <a href='themsanpham.html'><input type="button" value="Thêm sản phẩm" /></a>
+          <a href='themsanpham.php'><input type="button" value="Thêm sản phẩm" /></a>
           <a href='#'><input type="button" value="Danh sách sản phẩm" /></a>
         </td>
       </tr>
