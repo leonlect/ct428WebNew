@@ -26,18 +26,17 @@ if(isset($_POST['sothich']))
 // echo $st;
 
 //Bước 1 Tạo nối kết
-$con = new mysqli("localhost", "root", "", "buoi3");
-$con->set_charset("utf8");
+require 'connect.php';
 
 //Bước 2 tạo truy vấn
 $sql = " INSERT INTO thanhvien(tendangnhap, matkhau, hinhanh, gioitinh, nghenghiep, sothich)
-VALUES ('$userName',
-'$passWord',
-'$path',
-'$gender',
-'$job',
-'$st') ";
-//echo $sql;
+VALUES ('".$userName."',
+'".$passWord."',
+'".$path."',
+'".$gender."',
+'".$job."',
+'".$st."') ";
+// echo $sql;
 
 //Bước 3 thực hiện truy vấn
 $con->query($sql);
