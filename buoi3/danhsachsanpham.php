@@ -93,9 +93,10 @@ if(!isset($_SESSION['id'])) {
        echo "<td>".$i."</td>";
        echo "<td>".$row['tensp']."</td>";
        echo "<td>".$row['giasp']."(VND)</td>";
-       echo "<td><a href='chitietsanpham.php'>Xem chi tiết</a></td>";
-       echo "<td><a href='suasanpham.php'>Sửa</a></td>";
-       echo "<td><a href='xoasanpham.php'>Xóa</a></td>";
+       //Ở sau  ko cần dấu ?idsp='". $var ."' Nên dùng  ?idsp=".$row['idsp']."'
+       echo "<td><a href='chitietsanpham.php?idsp=".$row['idsp']."'>Xem chi tiết</a></td>";
+       echo "<td><a href='suasanpham.php?idsp=".$row['idsp']."'>Sửa</a></td>";
+       echo "<td><a href='xoasanpham.php?idsp=".$row['idsp']."'>Xóa</a></td>";
        echo "</tr>";
        $i++;
       }
