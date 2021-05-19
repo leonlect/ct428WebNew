@@ -104,7 +104,7 @@
       <tr>
         <td class="btnSP">
           <a href='themsanpham.php'><input type="button" value="Thêm sản phẩm" /></a>
-          <a href='#'><input type="button" value="Danh sách sản phẩm" /></a>
+          <a href='danhsachsanpham.php'><input type="button" value="Danh sách sản phẩm" /></a>
         </td>
       </tr>
     <tr>
