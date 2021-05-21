@@ -22,5 +22,5 @@
   // echo $sql;
   $con->query($sql);
   $con->close();
-  echo "<h2 style='color: blue; text-align: center'>Cập nhật sản phẩm thành công !</h2>";
+  header ('Location: danhsachsanpham.php');
 ?>
