@@ -3,7 +3,7 @@
  $idsp = $_GET['idsp'];
  $_SESSION['idsp'] = $idsp; //Lưu idsp vào SESSION để có thể xóa đúng idsp
  if(!isset($_SESSION['id'])) {
-  header ('Location: dangnhap.html');
+  header ('Location: dangnhap.php');
  }
  require 'connect.php';
  $sql = " SELECT * FROM sanpham WHERE idsp = ".$idsp."";

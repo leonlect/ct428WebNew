@@ -3,7 +3,7 @@
  $idsp = $_GET['idsp']; //Lấy về idsp từ bảng Danh sách sản phẩm truyền qua link với biến idsp bên file danhsachsanpham.php
  // echo $idsp;
  if(!isset($_SESSION['id'])) {
-  header('Location: dangnhap.html');
+  header('Location: dangnhap.php');
  }
  require 'connect.php';
  $sql = "SELECT * FROM sanpham WHERE idsp = ".$idsp."";

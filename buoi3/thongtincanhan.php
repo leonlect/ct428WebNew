@@ -24,7 +24,7 @@
     }
   }
   else {
-    header ("Location: dangnhap.html");
+    header ("Location: dangnhap.php");
   }
 ?>
 
@@ -83,6 +83,11 @@
         bottom: 30px;
       }
 
+      .footer-text{
+        text-align: center;
+        color: blue;
+      }
+
     </style>
   </head>
   <body>
@@ -113,5 +118,6 @@
         </td>
     </tr>
     </table>
+    <div class="footer-text"><p>Họ tên sinh viên: Lê Duy Anh</p><p>MSSV: S1800005</p></div>
   </body>
 </html>

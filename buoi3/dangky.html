@@ -8,7 +8,7 @@
     <style>
       table{
         /* border: 1px solid red; */
-        margin: 10px 5px 10px 10px;
+        /* margin: 10px 5px 10px 10px; */
         background-color: #d3d3d3;
         border-collapse: collapse;
       }
@@ -16,8 +16,8 @@
       form {
        margin-left: auto;
        margin-right: auto;
-       width: 412px;
-       /* padding: 1px 1px 1px 1px; */
+       width: fit-content;
+       padding: 10px;
        border: 1px solid black;
       }
       td {
@@ -28,10 +28,21 @@
       .td2 {
         padding-left: 15px;
       }
-
+      .center{
+        text-align: center;
+        color: red;
+      }
+      .footer-text{
+        text-align: center;
+        color: blue;
+      }
     </style>
   </head>
   <body>
+    <div class="center">
+      <p>Vui lòng điền đầy đủ thông tin bên dưới để đăng ký tài khoản</p>
+      <p>Bạn đã có tài khoản ? <a href="dangnhap.php">Click vào đây</a> để đăng nhập</p>
+    </div>
     <form action="xuly_dangky.php"
           method="POST" border="1"
           enctype="multipart/form-data">
@@ -100,5 +111,6 @@
       </tr>
       </table>
     </form>
+    <div class="footer-text"><p>Họ tên sinh viên: Lê Duy Anh</p><p>MSSV: S1800005</p></div>
   </body>
 </html>

@@ -3,7 +3,7 @@ session_start();
 $idtv = $_SESSION['id'];
 $tendangnhap = $_SESSION['tendangnhap'];
 if(!isset($_SESSION['id'])) {
- header ('Location: dangnhap.html');
+ header ('Location: dangnhap.php');
 }
 ?>
 
@@ -21,8 +21,8 @@ if(!isset($_SESSION['id'])) {
    border: 1px solid red;
    padding: 10px;
    width: fit-content;
+   height: fit-content;
    background-color: lightgray;
-   height: 300px;
   }
 
   .tableChild {
@@ -58,10 +58,14 @@ if(!isset($_SESSION['id'])) {
   }
 
   .btnLogout {
-   position: relative;
-   left: 260px;
-   bottom: -30px;
+   position: flex;
+   /* left: 260px;
+   bottom: -30px; */
   }
+  .footer-text{
+        text-align: center;
+        color: blue;
+      }
 
  </style>
 </head>
@@ -74,6 +78,7 @@ if(!isset($_SESSION['id'])) {
    $result = $con->query($sql);
   }
  ?>
+ <div class="headerName">DANH SÁCH SẢN PHẨM</div><br>
  <form>
   <p class='headerName'>Xin chào bạn <?php echo $tendangnhap; ?>!</p>
   <hr>
@@ -95,8 +100,8 @@ if(!isset($_SESSION['id'])) {
        echo "<td>".$row['giasp']."(VND)</td>";
        //Ở sau  ko cần dấu ?idsp='". $var ."' Nên dùng  ?idsp=".$row['idsp']."'
        echo "<td><a href='chitietsanpham.php?idsp=".$row['idsp']."'>Xem chi tiết</a></td>";
-       echo "<td><a href='suasanpham.php?idsp=".$row['idsp']."'>Sửa</a></td>";
-       echo "<td><a href='xoasanpham.php?idsp=".$row['idsp']."'>Xóa</a></td>";
+       echo "<td><a href='suasanpham.php?idsp=".$row['idsp']."'><img src='icon/edit.png' width ='20' height = '20'></a></td>";
+       echo "<td><a href='xoasanpham.php?idsp=".$row['idsp']."'><img src='icon/delete.png' width ='20' height = '20'></a></td>";
        echo "</tr>";
        $i++;
       }
@@ -107,5 +112,6 @@ if(!isset($_SESSION['id'])) {
      <a href='dangxuat.php'><input type='button' value='Đăng xuất'></a>
     </div>
     </form>
+    <div class="footer-text"><p>Họ tên sinh viên: Lê Duy Anh</p><p>MSSV: S1800005</p></div>
 </body>
 </html>

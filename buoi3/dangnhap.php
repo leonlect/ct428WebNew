@@ -11,18 +11,18 @@
     <title>Buổi 3 - Bài 1 Đăng nhập</title>
     <style>
       table {
-        /* border: 1px solid red; */
-        width: 380px;
-        margin: 10px 5px 10px 10px;
+        margin: 5px 5px 5px 5px;
         background-color: #d3d3d3;
         border-collapse: collapse;
+        padding: 5px;
       }
 
       form {
         margin-left: auto;
         margin-right: auto;
-        width: 400px;
+        width: fit-content;
         /* padding: 1px 1px 1px 1px; */
+        padding: 5px;
         border: 1px solid black;
       }
       td {
@@ -38,9 +38,24 @@
         float: right;
         margin-right: 42px;
       }
+
+      .footer-text{
+        text-align: center;
+        color: blue;
+      }
+
+      .center{
+        text-align: center;
+        color: red;
+      }
+
     </style>
   </head>
   <body>
+  <div class="center">
+      <p>ĐĂNG NHẬP TÀI KHOẢN</p>
+      <p>Bạn chưa có tài khoản ? <a href="dangky.html">Click vào đây</a> để đăng ký</p>
+    </div>
     <form action="xuly_dangnhap.php" method="POST">
       <table>
         <tr>
@@ -59,5 +74,6 @@
         </tr>
       </table>
     </form>
+    <div class="footer-text"><p>Họ tên sinh viên: Lê Duy Anh</p><p>MSSV: S1800005</p></div>
   </body>
 </html>

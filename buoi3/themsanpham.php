@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['id'])) {
-  header ('Location: dangnhap.html');
+  header ('Location: dangnhap.php');
 }
 ?>
 
@@ -40,6 +40,12 @@ if(!isset($_SESSION['id'])) {
       .dBlock {
         display: inline-block;
       }
+
+      .footer-text{
+        text-align: center;
+        color: blue;
+      }
+
     </style>
   </head>
   <body>
@@ -77,5 +83,6 @@ if(!isset($_SESSION['id'])) {
         </tr>
       </table>
     </form>
+    <div class="footer-text"><p>Họ tên sinh viên: Lê Duy Anh</p><p>MSSV: S1800005</p></div>
   </body>
 </html>
