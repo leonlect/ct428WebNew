@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Buổi 3 - Bài 1 Đăng ký</title>
+    <title>Buổi 4 - Bài 1 Đăng ký JS</title>
     <style>
       table{
         /* border: 1px solid red; */
@@ -41,35 +41,51 @@
   <body>
     <div class="center">
       <p>Vui lòng điền đầy đủ thông tin bên dưới để đăng ký tài khoản</p>
-      <p>Bạn đã có tài khoản ? <a href="dangnhap.php">click vào đây</a> để đăng nhập</p>
+      <p>Bạn đã có tài khoản ? <a href="dangnhap.php">Click vào đây</a> để đăng nhập</p>
     </div>
     <form action="xuly_dangky.php"
           method="POST" border="1"
-          enctype="multipart/form-data">
+          enctype="multipart/form-data" onsubmit = "return checkRegister();">
       <table>
         <tr>
           <td>Tên đăng nhập</td>
           <td class="td2">
-            <input type="text" name="userName" size="15" />
+            <input type="text" name="userName" id="userName" size="15" />
           </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="td2"><p id="idUserName"></p></td>
         </tr>
         <tr>
           <td>Mật khẩu</td>
           <td class="td2">
-            <input type="password" name="passWord" size="15" />
+            <input type="password" name="passWord" id="passWord" size="15" />
           </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="td2"><p id="idPassWord"></p></td>
         </tr>
         <tr>
           <td>Gõ lại mật khẩu</td>
           <td class="td2">
-            <input type="password" name="confirm" size="15" />
+            <input type="password" name="confirm" id="confirmPass" size="15" />
           </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="td2"><p id="idConfirmPass"></p></td></tr>
         </tr>
         <tr>
           <td>Hình đại diện</td>
           <td class="td2">
-            <input type="file" name="avatar"/>
+            <input type="file" name="avatar" id="avatar"/>
           </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="td2"><p id="idAvatar"></p></td>
         </tr>
         <tr>
           <td>Giới tính</td>
@@ -112,5 +128,62 @@
       </table>
     </form>
     <div class="footer-text"><p>Họ tên sinh viên: Lê Duy Anh</p><p>MSSV: S1800005</p></div>
+
+<!-- JavaScript goes here -->
+<script>
+  function checkRegister() {
+
+    var check = true; //Tao bien kiem tra truoc
+    //Set RegEx for userName and passWord
+    var RegExpUser = /^[A-Za-z][A-Za-z0-9]{5,15}$/; //6 den 15 ky tu va phai co chu so
+    var RegExpPass = /^(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z0-9]{6,15}/;
+
+    //Lay cac du lieu ve bien
+    var userName = document.getElementById('userName').value;
+    var passWord = document.getElementById('passWord').value;
+    var confirm = document.getElementById('confirmPass').value;
+    var avatar = document.getElementById('avatar'),value;
+
+    //Test with RegEx for User and Pass
+    if (RegExpUser.test(userName) == false || userName == ""){
+      check = false;
+      document.getElementById("idUserName").style.color = "red";
+      document.getElementById("idUserName").innerHTML = "Tên đăng nhập phải bắt đầu bằng chữ và có độ dài 6-15 ký tự !";
+    }
+    else{
+      document.getElementById("idUserName").innerHTML = "";
+    }
+
+    if (RegExpPass.test(passWord) == false || passWord == ""){
+      check = false;
+      document.getElementById("idPassWord").style.color = "red";
+      document.getElementById('idPassWord').innerHTML = "Mật khẩu phải có ít nhất 1 chữ và số và có độ dài 6-15 ký tự !";
+    }
+    else{
+      document.getElementById('idPassWord').innerHTML = "";
+    }
+
+    if ( confirm != passWord || confirm == ""){
+      check = false;
+      document.getElementById("idConfirmPass").style.color = "red";
+      document.getElementById('idConfirmPass').innerHTML = "Mật khẩu không khớp ! Nhập lại !";
+    }
+    else{
+      document.getElementById('idConfirmPass').innerHTML = "";
+    }
+
+    if (avatar.value == ""){
+      check = false;
+      document.getElementById("idAvatar").style.color = "red";
+      document.getElementById('idAvatar').innerHTML = "Chưa tải lên hình đại diện !";
+    }
+    else{
+      document.getElementById('idAvatar').innerHTML="";
+    }
+    return check;
+  }
+</script>
+
+
   </body>
 </html>

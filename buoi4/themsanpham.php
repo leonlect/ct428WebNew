@@ -83,6 +83,6 @@ if(!isset($_SESSION['id'])) {
         </tr>
       </table>
     </form>
-    <div class="footer-text"><p>Họ tên sinh viên: Lê Duy Anh</p><p>MSSV: S1800005</p></div>s
+    <div class="footer-text"><p>Họ tên sinh viên: Lê Duy Anh</p><p>MSSV: S1800005</p></div>
   </body>
 </html>

@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Lập trình web (CT428)</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="title">
+        <h1>Bài 3 - Buổi 4</h1>
+      </div>
+      <!--end div title-->
+      <div id="menu">
+        <!-- chèn menu của sinh viên vào-->
+      </div>
+      <!--end div menu-->
+      <div id="content">
+        <!--Nội dung trang web-->
+        <h1>Quảng cáo</h1>
+
+        <div class="slideImg">
+          <a href="http://www.hp.com" target="_blank" id="link"
+            ><img
+              name="laptopImg"
+              src="img/hp.jpg"
+              height="300"
+              width="300"
+              onmouseover="pauseTimer()"
+              onmouseout="activateTimer()"
+          /></a>
+        </div>
+        <div class="slideImg">
+          <a href="http://www.asus.com" target="_blank" id=""
+            ><img
+              name=""
+              src="img/asus.jpg"
+              height="300"
+              width="300"
+              onmouseover="pauseTimer()"
+              onmouseout="activateTimer()"
+          /></a>
+        </div>
+        <div class="slideImg">
+          <a href="http://www.dell.com" target="_blank" id=""
+            ><img
+              name=""
+              src="img/dell.jpg"
+              height="300"
+              width="300"
+              onmouseover="pauseTimer()"
+              onmouseout="activateTimer()"
+          /></a>
+        </div>
+        <div class="slideImg">
+          <a href="http://www.acer.com" target="_blank" id=""
+            ><img
+              name=""
+              src="img/acer.jpg"
+              height="300"
+              width="300"
+              onmouseover="pauseTimer()"
+              onmouseout="activateTimer()"
+          /></a>
+        </div>
+        <p>
+          Yêu cầu:<br />
+          Có 4 hình ảnh của 4 công ty muốn quảng cáo đính kèm. Đầu tiên hiển thị
+          một hình, cứ 2 giây thì thay hình ảnh khác, xoay vòng giữa 4 hình ảnh
+          đã cho.<br />
+          Khi người dùng rê chuột lên hình nào thì hình đó dừng lại không thay
+          đổi để người dùng đọc thông tin về quảng cáo đó, khi nào người dùng rê
+          chuột khỏi thì 2 giây sau mới cho hiển thị hình tiếp theo.<br />
+          Khi người dùng click vào hình nào thì liên kết đến website của hình đó
+          ở cửa sổ mới.
+        </p>
+      </div>
+
+      <script>
+        var time;
+        var slideIndex = 0;
+
+        showSlides(); //Call func showSlides
+
+        function showSlides() {
+          //Define func
+          var slider = document.getElementsByClassName("slideImg"); //Get array of Images <=> IMAGE_PATH
+          for (index = 0; index < slider.length; index++) {
+            slider[index].style.display = "none";
+          }
+
+          slideIndex++;
+          if (slideIndex > slider.length) {
+            slideIndex = 1;
+          }
+
+          slider[slideIndex - 1].style.display = "block";
+          time = setTimeout(showSlides, 2000);
+        }
+
+        function pauseTimer() {
+          clearTimeout(time);
+        }
+
+        function activateTimer() {
+          setTimeout(showSlides, 2000); //Change Image for every 2 second
+        }
+      </script>
+
+      <!--end div content-->
+      <div id="footer">
+        <p>
+          Họ tên SV: Lê Duy Anh <br />
+          Email: anhs1800005@student.ctu.edu.vn
+        </p>
+      </div>
+      <!--end div footer-->
+    </div>
+    <!--end div wrap-->
+  </body>
+</html>

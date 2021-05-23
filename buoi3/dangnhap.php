@@ -64,7 +64,7 @@
         </tr>
         <tr>
           <td>Mật khẩu:</td>
-          <td class="td2"><input type="text" name="matkhau" /></td>
+          <td class="td2"><input type="password" name="matkhau" /></td>
         </tr>
         <tr>
           <td></td>

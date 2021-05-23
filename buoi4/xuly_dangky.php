@@ -42,6 +42,7 @@ VALUES ('".$userName."',
 $con->query($sql);
 
 //Bước 4 đóng nối kết
-echo "<h2>Đăng ký thành viên mới thành công !</h2>";
+echo "<h2>Thêm thành viên mới thành công !</h2>";
 echo "<h2>Quay về trang <a href='dangnhap.php'>Đăng nhập.</a></h2>";
+
 $con->close();
