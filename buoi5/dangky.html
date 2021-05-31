@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buổi 5 - Bài 1 Đăng ký JS Check UserName</title>
+    <style>
+      table{
+        /* border: 1px solid red; */
+        /* margin: 10px 5px 10px 10px; */
+        background-color: #d3d3d3;
+        border-collapse: collapse;
+      }
+
+      form {
+       margin-left: auto;
+       margin-right: auto;
+       width: fit-content;
+       padding: 10px;
+       border: 1px solid black;
+      }
+      td {
+        /* border: 1px solid purple; */
+        padding: 15px 1px 15px 18px;
+      }
+
+      .td2 {
+        padding-left: 15px;
+      }
+      .center{
+        text-align: center;
+        color: red;
+      }
+      .footer-text{
+        text-align: center;
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <p>Vui lòng điền đầy đủ thông tin bên dưới để đăng ký tài khoản</p>
+      <p>Bạn đã có tài khoản ? <a href="dangnhap.php">Click vào đây</a> để đăng nhập</p>
+    </div>
+    <form action="xuly_dangky.php"
+          method="POST" border="1"
+          enctype="multipart/form-data" onsubmit = "return checkRegister();">
+      <table>
+        <tr>
+          <td>Tên đăng nhập</td>
+          <td class="td2">
+            <input type="text" name="userName" id="userName" size="15" onchange="return checkUserName(this.value);" />
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="td2"><p id="idUserName"></p></td>
+        </tr>
+        <tr>
+          <td>Mật khẩu</td>
+          <td class="td2">
+            <input type="password" name="passWord" id="passWord" size="15" />
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="td2"><p id="idPassWord"></p></td>
+        </tr>
+        <tr>
+          <td>Gõ lại mật khẩu</td>
+          <td class="td2">
+            <input type="password" name="confirm" id="confirmPass" size="15" />
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="td2"><p id="idConfirmPass"></p></td></tr>
+        </tr>
+        <tr>
+          <td>Hình đại diện</td>
+          <td class="td2">
+            <input type="file" name="avatar" id="avatar"/>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="td2"><p id="idAvatar"></p></td>
+        </tr>
+        <tr>
+          <td>Giới tính</td>
+          <td class="td2">
+            <input type="radio" id="male" name="gender" value="Nam" />
+            <label for="male">Nam</label>
+            <input type="radio" id="female" name="gender" value="Nữ" />
+            <label for="female">Nữ</label>
+            <input type="radio" id="other" name="gender" value="Khác" />
+            <label for="other">Khác</label>
+          </td>
+        </tr>
+        <tr>
+          <td>Nghề nghiệp</td>
+          <td class="td2">
+            <!-- Drop down list -->
+            <select name="nghenghiep">
+              <option value="Học sinh">Học sinh</option>
+              <option value="Sinh viên">Sinh viên</option>
+              <option value="Giáo viên">Giáo viên</option>
+              <option value="Khác">Khác</option>
+          </td>
+        </tr>
+        <tr>
+         <td>Sở thích</td>
+         <td class="td2">
+          <input type="checkbox" name="sothich[]" value="Thể thao">Thể thao
+          <input type="checkbox" name="sothich[]" value="Du lịch">Du lịch
+          <input type="checkbox" name="sothich[]" value="Âm nhạc">Âm nhạc</br>
+          <input type="checkbox" name="sothich[]" value="Thời trang">Thời trang
+         </td>
+       </tr>
+       <tr>
+        <td></td>
+        <td class="td2">
+          <input type="submit" value="Đăng ký">
+          <input type="reset" value="Nhập lại">
+        </td>
+      </tr>
+      </table>
+    </form>
+    <div class="footer-text"><p>Họ tên sinh viên: Lê Duy Anh</p><p>MSSV: S1800005</p></div>
+
+<!-- JavaScript goes here -->
+<script>
+  function checkRegister() {
+
+    var check = true; //Tao bien kiem tra truoc
+    //Set RegEx for userName and passWord
+    var RegExpUser = /^[A-Za-z][A-Za-z0-9]{5,15}$/; //6 den 15 ky tu va phai co chu so
+    var RegExpPass = /^(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z0-9]{6,15}/;
+
+    //Lay cac du lieu ve bien
+    var userName = document.getElementById('userName').value;
+    var passWord = document.getElementById('passWord').value;
+    var confirm = document.getElementById('confirmPass').value;
+    var avatar = document.getElementById('avatar'),value;
+
+    //Test with RegEx for User and Pass
+    if (RegExpUser.test(userName) == false || userName == ""){
+      check = false;
+      document.getElementById("idUserName").style.color = "red";
+      document.getElementById("idUserName").innerHTML = "Tên đăng nhập phải bắt đầu bằng chữ và có độ dài 6-15 ký tự !";
+    }
+    else{
+      document.getElementById("idUserName").innerHTML = "";
+    }
+
+    if (RegExpPass.test(passWord) == false || passWord == ""){
+      check = false;
+      document.getElementById("idPassWord").style.color = "red";
+      document.getElementById('idPassWord').innerHTML = "Mật khẩu phải có ít nhất 1 chữ và số và có độ dài 6-15 ký tự !";
+    }
+    else{
+      document.getElementById('idPassWord').innerHTML = "";
+    }
+
+    if ( confirm != passWord || confirm == ""){
+      check = false;
+      document.getElementById("idConfirmPass").style.color = "red";
+      document.getElementById('idConfirmPass').innerHTML = "Mật khẩu không khớp ! Nhập lại !";
+    }
+    else{
+      document.getElementById('idConfirmPass').innerHTML = "";
+    }
+
+    if (avatar.value == ""){
+      check = false;
+      document.getElementById("idAvatar").style.color = "red";
+      document.getElementById('idAvatar').innerHTML = "Chưa tải lên hình đại diện !";
+    }
+    else{
+      document.getElementById('idAvatar').innerHTML="";
+    }
+    return check;
+  }
+</script>
+<script>
+  function checkUserName(val) {
+      var flag = true;
+      var xmlhttp;
+      if(window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest();
+
+      } else {
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange=function() {
+        if(xmlhttp.readyState==4 && xmlhttp.status==200) {
+          flag = false;
+          document.getElementById("idUserName").innerHTML=xmlhttp.responseText;
+        }
+      }
+    xmlhttp.open("GET", "xuly.php?userName="+val, true);
+    xmlhttp.send();
+}
+</script>
+
+  </body>
+</html>

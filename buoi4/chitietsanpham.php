@@ -12,7 +12,7 @@ $result = $con->query($sql);
 if($result -> num_rows > 0) {
  $row = $result->fetch_assoc();
  $tensp = $row['tensp'];
- $chitietsp = $row['giasp'];
+ $chitietsp = $row['chitietsp'];
  $giasp = $row['giasp'];
  $hinhanhsp = $row['hinhanhsp'];
 }
